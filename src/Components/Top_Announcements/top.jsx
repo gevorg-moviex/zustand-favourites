@@ -2,16 +2,16 @@ import categories from "../../../data";
 import { useCallback, useState } from "react";
 
 
-export default function TopAnnouncements( {handleBookmarked} ){
+export default function TopAnnouncements( {handleBookmarked, isActive} ){
     return (
         <div className="text-center">
             <h1 className="font-bold text-2xl">Թոփ հայտարարություններ</h1>
             <div className="grid grid-cols-custom grid-rows-3 justify-center gap-y-5 gap-x-8 p-5">
                 {categories.topAnnouncements.map((item) => (
-                    <div key={item.id} className="flex flex-col justify-between items-center gap-2 border border-gray-400 border-solid p-3 w-[220px] cursor-pointer">
+                    <div key={item.id} className="flex flex-col justify-between items-center gap-2 p-3 w-[220px] cursor-pointer shadow-customShadow rounded-xl">
                         <div className="relative">
                             <img src={item.imageUrl} alt="" className="min-w-52 h-40"/>
-                            <i className="fa-regular fa-heart absolute top-1 right-3 text-white text-xl p-1 cursor-pointer hover:text-red-600" onClick={() => handleBookmarked(item)}></i>
+                            <i className={`fa-regular fa-heart absolute top-1 right-3 text-white text-xl p-1 cursor-pointer hover:text-red-600 ${isActive.includes(item.id) ? "bg-red-700" : "bg-transparent"}`} onClick={() => handleBookmarked(item)}></i>
                         </div>
                         <div className="w-full text-left">
                             <span className="text-[#039be5]">{item.title}</span>

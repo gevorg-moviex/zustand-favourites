@@ -12,8 +12,8 @@ export default function AddToFavourites() {
 
     return (
         <>
-            <div className='w-full text-center mt-3 cursor-pointer'>
-                <i className="fa-solid fa-bookmark" onClick={() => setIsModalOpen(true)}></i>
+            <div className='w-9 h-9 flex justify-center items-center text-center cursor-pointer border border-solid border-gray-500 p-3 rounded-[50%]'>
+                <i className="fa-solid fa-bookmark text-2xl" onClick={() => setIsModalOpen(true)}></i>
             </div>
 
             {isModalOpen && (

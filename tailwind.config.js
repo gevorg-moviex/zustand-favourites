@@ -11,6 +11,9 @@ export default {
         'custom': 'repeat(4, auto)',
         'auto-fill': 'repeat(auto-fill, minmax(200px, 1fr))',
       },
+      boxShadow: {
+        'customShadow': '0 3px 8px rgba(0, 0, 0, 0.24)',
+      },
     },
   },
   plugins: [],

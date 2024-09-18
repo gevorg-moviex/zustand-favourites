@@ -11,7 +11,7 @@ const useBookmarkStore = create((set) => ({
         bookmarks: state.bookmarks.filter(item => item.id !== itemId)
     })),
 
-    clearBookmarks: () => set({ bookmarks: [] }),
+    clearBookmarks: (actives) => set({ bookmarks: [] }),
 }))
 
 export default useBookmarkStore;

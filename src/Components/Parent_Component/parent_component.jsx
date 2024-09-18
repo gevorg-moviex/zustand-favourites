@@ -4,7 +4,7 @@ import TopAnnouncements from '../../components/TopAnnouncements';
 
 export default function ParentComponent() {
     const handleBookmark = useCallback((item) => {
-        addBookmark(item); addb
+        addBookmark(item); 
     }, [addBookmark]);
 
     return (
