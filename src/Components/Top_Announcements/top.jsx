@@ -1,6 +1,4 @@
 import categories from "../../../data";
-import { useCallback, useState } from "react";
-
 
 export default function TopAnnouncements( {handleBookmarked, isActive} ){
     return (
@@ -11,7 +9,7 @@ export default function TopAnnouncements( {handleBookmarked, isActive} ){
                     <div key={item.id} className="flex flex-col justify-between items-center gap-2 p-3 w-[220px] cursor-pointer shadow-customShadow rounded-xl">
                         <div className="relative">
                             <img src={item.imageUrl} alt="" className="min-w-52 h-40"/>
-                            <i className={`fa-regular fa-heart absolute top-1 right-3 text-white text-xl p-1 cursor-pointer hover:text-red-600 ${isActive.includes(item.id) ? "bg-red-700" : "bg-transparent"}`} onClick={() => handleBookmarked(item)}></i>
+                            <i className={`${isActive.includes(item.id) ? "fa-solid fa-heart text-red-500" : "fa-regular fa-heart text-white"}  absolute top-1 right-3 text-xl p-1 cursor-pointer hover:text-red-600`} onClick={() => handleBookmarked(item)}></i>
                         </div>
                         <div className="w-full text-left">
                             <span className="text-[#039be5]">{item.title}</span>

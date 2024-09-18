@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar actived={active} setActived={setActive}/>
       <TopAnnouncements handleBookmarked={handleBookmark} isActive={active} />
       <UrgentSale handleBookmarked={handleBookmark} isActive={active} />
       <OffersFromDealers handleBookmarked={handleBookmark} isActive={active} />

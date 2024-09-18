@@ -1,6 +1,6 @@
 import AddToFavourites from "../../Favourites_Function/progress";
 
-export default function Navbar(){
+export default function Navbar({actived, setActived}){
     return (
         <div className="nav-parent flex flex-col justify-center items-center gap-3 pb-5">
             <ul className="flex gap-[2px] font-bold">
@@ -14,7 +14,7 @@ export default function Navbar(){
             </ul>
             <div className="flex gap-4">
                 <button className="bg-blue-700 text-white px-7 text-center rounded-md py-1">Բոլոր առաջարկները</button>
-                <AddToFavourites />
+                <AddToFavourites  actived={actived} setActived={setActived} />
             </div>
         </div>
     )
