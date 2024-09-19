@@ -1,10 +1,13 @@
 import { act, useState } from 'react'
 import './App.css'
-import TopAnnouncements from './Components/Top_Announcements/top'
-import UrgentSale from './Components/Urgent_Sale/urgent'
-import OffersFromDealers from './Components/Offers_From_Dealers/dealers'
 import useBookmarkStore from './store/useBookmarkStore'
-import Navbar from './Components/Navbar/navbar'
+import Login from './Pages/login'
+import Register from './Pages/register'
+import { Routes, Route } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+import Layout from './Pages/layout'
+import TopAnnouncements from './Components/Top_Announcements/top'
+import Some from './Components/ss'
 
 function App() {
   const {removeBookmark, addBookmark} = useBookmarkStore();
@@ -22,10 +25,20 @@ function App() {
 
   return (
     <>
-      <Navbar actived={active} setActived={setActive}/>
+        <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/mardatar" element={<Layout actived1={active} setActived1={setActive} />}>
+                <Route index element={<TopAnnouncements handleBookmarked={handleBookmark} isActive={active} />} /> {/* Renders TopAnnouncements at /mardatar */}
+            </Route>
+            <Route path="/bernatar" element={<Some />} />
+        </Routes>
+
+      {/* <Navbar actived={active} setActived={setActive}/>
       <TopAnnouncements handleBookmarked={handleBookmark} isActive={active} />
       <UrgentSale handleBookmarked={handleBookmark} isActive={active} />
-      <OffersFromDealers handleBookmarked={handleBookmark} isActive={active} />
+      <OffersFromDealers handleBookmarked={handleBookmark} isActive={active} /> */}
     </>
   )
 }
