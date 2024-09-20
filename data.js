@@ -165,7 +165,7 @@ const categories = {
         },
         {
             id: 24,
-            imageUrl: "https://auto.am/static/offers/3066321/s-9ca73828c483b8b8171532635e13316e.jpg",
+            imageUrl: "https://auto.am/static/offers/3061668/m-e321dd65496a7714e7b6966dbac7b5d7.jpg",
             title: "Volkswagen iD.6",
             date: 2022,
             price: "$ 27.500",
