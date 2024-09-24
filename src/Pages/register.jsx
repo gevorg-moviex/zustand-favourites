@@ -6,6 +6,7 @@ export default function Register() {
     const [surname, setSurname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [show, setShow] = useState(false);
 
     const obj = {
         userName: name,
@@ -24,6 +25,7 @@ export default function Register() {
                 userSurname: surname,
                 userEmail: email,
                 userPassword: password,
+                isLogined: true
             };
     
             infoArray.push(newUser);
@@ -56,11 +58,12 @@ export default function Register() {
                     </div>
                     <div className="flex flex-col gap-3 w-4/5">
                         <label htmlFor="email">Email</label>
-                        <input autoComplete="current-password" type="text" id="email" placeholder="Enter your email..." onChange={e => setEmail(e.target.value)} className="bg-transparent rounded-full outline-none shadow-inputsShadow h-8 px-4 py-[20px]" />
+                        <input autoComplete="current-password" type="email" id="email" placeholder="Enter your email..." onChange={e => setEmail(e.target.value)} className="bg-transparent rounded-full outline-none shadow-inputsShadow h-8 px-4 py-[20px]" />
                     </div>
-                    <div className="flex flex-col gap-3 w-4/5">
+                    <div className="flex flex-col gap-3 w-4/5 relative">
                         <label htmlFor="password">Password</label>
-                        <input autoComplete="current-password" type="password" id="password" placeholder="Enter your password..." onChange={e => setPassword(e.target.value)} className="bg-transparent rounded-full outline-none shadow-inputsShadow h-8 px-4 py-[20px]" />
+                        <input autoComplete="current-password" type={`${show ? "text" : "password"}`} id="password" placeholder="Enter your password..." onChange={e => setPassword(e.target.value)} className="bg-transparent rounded-full outline-none shadow-inputsShadow h-8 px-4 py-[20px]" />
+                        <i className={`${show ? "fa solid fa-eye" : "fa solid fa-eye-slash"} absolute right-3 bottom-3 cursor-pointer`} onClick={() => show ? setShow(false) : setShow(true)}></i>
                     </div>
                     <button type="submit" className="w-36 rounded-full bg-[#03BFA9] outline-none border-none text-white py-2">Create Account</button>
                     <p className="text-sm">Already have an account? <b className="cursor-pointer hover:border-b-2 border-[#03BFA9] pb-[2px]"><Link to="/login">Log in</Link></b></p>

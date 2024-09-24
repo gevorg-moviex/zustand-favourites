@@ -10,7 +10,8 @@ export default function Login() {
 
     function handleGetInfo(e){
         e.preventDefault()
-        const info = JSON.parse(localStorage.getItem("info") || [])
+        const storedInfo = localStorage.getItem("info");
+        const info = storedInfo ? JSON.parse(storedInfo) : [];
 
         const user = info.filter(user => user.userEmail === email && user.userPassword === password )
         

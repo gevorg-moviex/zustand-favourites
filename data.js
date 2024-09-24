@@ -44,7 +44,7 @@ const categories = {
         },
         {
             id: 7,
-            imageUrl: "https://auto.am/static/offers/3059756/s-60ab1b1c8756e613f977a32f96854884.jpg",
+            imageUrl: "https://auto.am/static/offers/3074162/m-4afea01bbba9a57b3bbb67113be2f52e.jpg",
             title: "Kia Rio",
             date: 2023,   
             price: "$ 15.500"
